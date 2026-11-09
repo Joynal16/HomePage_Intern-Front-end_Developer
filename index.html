@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The-Tiny Website</title>
+
+  <!--Daisy UI-->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+
+  <!--Tailwind CSS-->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+</head>
+
+<body class="bg-white font-sans text-slate-900 antialiased">
+
+  <!-- Header -->
+  <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
+    <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
+      <a href="#" class="flex items-center gap-2 text-lg font-bold tracking-tight">
+        <img class="w-50" src="https://thetiny.site/storage/settings/only-logo-6ace061694a80.png" alt="">
+      </a>
+      <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex" aria-label="Main">
+        <a href="#home" class="hover:text-slate-900 underline top-1">Home</a>
+        <a href="#about" class="hover:text-slate-900">About</a>
+        <a href="#blog" class="hover:text-slate-900">Blog</a>
+        <a href="#terms" class="hover:text-slate-900">Terms</a>
+      </nav>
+      <div class="hidden items-center gap-3 md:flex">
+        <a href="#" class="rounded-lg px-4 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100">Log in</a>
+        <a href="#" class="rounded-lg bg-indigo-600 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-700">Get Started Free</a>
+      </div>
+      <button id="menu-btn" class="rounded-lg p-2 text-slate-700 hover:bg-slate-100 focus-visible:outline focus-visible:outline-2 focus-visible:outline-indigo-600 md:hidden" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+    <div id="menu" class="hidden border-t border-slate-200 bg-white px-4 py-3 md:hidden">
+      <a href="#home" class="block rounded-lg px-3 py-2 font-medium hover:bg-slate-100">Home</a>
+      <a href="#about" class="block rounded-lg px-3 py-2 font-medium hover:bg-slate-100">About</a>
+      <a href="#blog" class="block rounded-lg px-3 py-2 font-medium hover:bg-slate-100">Blog</a>
+      <a href="#terms" class="block rounded-lg px-3 py-2 font-medium hover:bg-slate-100">Terms</a>
+      <div class="mt-2 grid grid-rows-2 gap-2">
+        <a href="#" class="rounded-lg border border-slate-300 px-4 py-2 text-center font-semibold">Log in</a>
+        <a href="#" class="rounded-lg bg-indigo-600 px-4 py-2 text-center font-semibold text-white">Get Started Free</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="start" class="bg-indigo-50/70">
+      <div class="mx-auto max-w-4xl px-4 pb-20 pt-16 text-center sm:px-6 sm:pb-28 sm:pt-24">
+        <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">Shorten your URL in seconds</h1>
+        <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-slate-600">Create short, memorable links that you can share anywhere. Track every click with powerful analytics.</p>
+
+        <form id="form" class="mx-auto mt-10 flex max-w-2xl flex-col gap-2 rounded-2xl bg-white p-2 shadow-lg ring-1 ring-slate-200 sm:flex-row">
+          <label for="url" class="sr-only">Long URL</label>
+          <input id="url" type="url" required placeholder="Paste your long link here" class="min-w-0 flex-1 rounded-xl px-4 py-3 text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+          <button type="submit" class="rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Shorten URL</button>
+        </form>
+
+        <div id="result" class="mx-auto mt-4 hidden max-w-2xl items-center justify-between gap-3 rounded-xl bg-white px-4 py-3 text-left ring-1 ring-indigo-200" aria-live="polite">
+          <span id="short" class="truncate font-semibold text-indigo-700"></span>
+          <button id="copy" type="button" class="shrink-0 rounded-lg bg-slate-900 px-4 py-1.5 text-sm font-semibold text-white hover:bg-slate-700">Copy</button>
+        </div>
+
+      
+    <!-- Home Section -->
+    <section id="home" class="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Short links that do more than redirect</h2>
+          <p class="mt-4 max-w-lg text-lg leading-relaxed text-slate-600">Make a link once, then see how people use it.</p>
+          <dl class="mt-10 space-y-8">
+            <div class="flex gap-4">
+              <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-indigo-100 text-indigo-700">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div><dt class="font-semibold">Instant short links</dt><dd class="mt-1 text-slate-600">Paste a long URL and get a short one you can copy right away.</dd></div>
+            </div>
+            <div class="flex gap-4">
+              <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-indigo-100 text-indigo-700">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 19V9m6 10V5m6 14v-7m4 7H2"/></svg>
+              </div>
+              <div><dt class="font-semibold">Click analytics</dt><dd class="mt-1 text-slate-600">Count every click and see which days your link gets the most visits.</dd></div>
+            </div>
+            <div class="flex gap-4">
+              <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-indigo-100 text-indigo-700">
+                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>
+              </div>
+              <div><dt class="font-semibold">Memorable by design</dt><dd class="mt-1 text-slate-600">Short enough to read aloud, type by hand, or fit in a post.</dd></div>
+            </div>
+          </dl>
+        </div>
+
+        <!-- Analytics preview -->
+        <div class="rounded-2xl bg-slate-900 p-6 text-white shadow-xl sm:p-8">
+          <div class="flex items-start justify-between">
+            <div>
+              <p class="text-sm text-slate-400">Clicks this week</p>
+              <p class="mt-1 text-4xl font-bold">1,284</p>
+            </div>
+            <span class="rounded-full bg-emerald-400/15 px-3 py-1 text-sm font-medium text-emerald-300">+18%</span>
+          </div>
+          <div class="mt-8 flex h-44 items-end gap-2 sm:gap-3" role="img" aria-label="Bar chart of clicks per day">
+            <div class="h-16 flex-1 rounded-t-md bg-indigo-400/50"></div>
+            <div class="h-24 flex-1 rounded-t-md bg-indigo-400/50"></div>
+            <div class="h-20 flex-1 rounded-t-md bg-indigo-400/50"></div>
+            <div class="h-32 flex-1 rounded-t-md bg-indigo-400/50"></div>
+            <div class="h-28 flex-1 rounded-t-md bg-indigo-400/50"></div>
+            <div class="h-44 flex-1 rounded-t-md bg-indigo-400"></div>
+            <div class="h-36 flex-1 rounded-t-md bg-indigo-400/50"></div>
+          </div>
+          <div class="mt-3 flex gap-2 text-center text-xs text-slate-400 sm:gap-3">
+            <span class="flex-1">Mon</span><span class="flex-1">Tue</span><span class="flex-1">Wed</span><span class="flex-1">Thu</span><span class="flex-1">Fri</span><span class="flex-1 font-semibold text-white">Sat</span><span class="flex-1">Sun</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="bg-slate-50">
+      <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+        <h2 class="max-w-xl text-3xl font-bold tracking-tight sm:text-4xl">Three steps from long link to tracked link</h2>
+        <ol class="mt-12 grid gap-10 md:grid-cols-3 md:gap-8">
+          <li class="border-t-2 border-indigo-600 pt-5">
+            <span class="text-sm font-bold text-indigo-600">Step 1</span>
+            <h3 class="mt-2 text-xl font-semibold">Paste your URL</h3>
+            <p class="mt-2 leading-relaxed text-slate-600">Drop any long link into the box at the top of the page.</p>
+          </li>
+          <li class="border-t-2 border-indigo-600 pt-5">
+            <span class="text-sm font-bold text-indigo-600">Step 2</span>
+            <h3 class="mt-2 text-xl font-semibold">Shorten it</h3>
+            <p class="mt-2 leading-relaxed text-slate-600">Select Shorten URL and your new tiny link appears in seconds.</p>
+          </li>
+          <li class="border-t-2 border-indigo-600 pt-5">
+            <span class="text-sm font-bold text-indigo-600">Step 3</span>
+            <h3 class="mt-2 text-xl font-semibold">Share and track</h3>
+            <p class="mt-2 leading-relaxed text-slate-600">Post it anywhere, then watch the clicks come in.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
+      <div class="rounded-3xl bg-indigo-600 px-6 py-14 text-center text-white sm:px-12">
+        <h2 class="mx-auto max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">Make your next link a tiny one</h2>
+        <p class="mx-auto mt-4 max-w-lg text-indigo-100">Create a free account to keep all your short links and their click counts in one place.</p>
+        <a href="#" class="mt-8 inline-block rounded-xl bg-white px-7 py-3 font-semibold text-indigo-700 hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Create free account</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200">
+    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-slate-500 sm:flex-row sm:px-6">
+      <p>&copy; 2026 thetiny. All rights reserved.</p>
+      <nav class="flex gap-6" aria-label="Footer">
+        <a href="#home" class="hover:text-slate-900">Features</a>
+        <a href="#about" class="hover:text-slate-900">How it works</a>
+        <a href="#" class="hover:text-slate-900">Privacy</a>
+        <a href="#" class="hover:text-slate-900">Terms</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const btn = $('menu-btn'), menu = $('menu');
+    btn.addEventListener('click', () => {
+      const open = menu.classList.toggle('hidden') === false;
+      btn.setAttribute('aria-expanded', open);
+    });
+    // Front-end demo only: generates a sample short link, no server call.
+    $('form').addEventListener('submit', (e) => {
+      e.preventDefault();
+      $('short').textContent = 'thetiny.site/' + Math.random().toString(36).slice(2, 8);
+      $('result').classList.replace('hidden', 'flex');
+    });
+    $('copy').addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText('https://' + $('short').textContent); $('copy').textContent = 'Copied'; }
+      catch { $('copy').textContent = 'Press Ctrl+C'; }
+      setTimeout(() => ($('copy').textContent = 'Copy'), 1500);
+    });
+  </script>
+</body>
+</html>
