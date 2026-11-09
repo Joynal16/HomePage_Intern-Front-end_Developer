@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>The-Tiny Website</title>
 
+  <!--Font Awesome-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+
   <!--Daisy UI-->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 
@@ -19,10 +22,10 @@
   <header class="sticky top-0 z-30 border-b border-slate-200 bg-white/90 backdrop-blur">
     <div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-4 sm:px-6">
       <a href="#" class="flex items-center gap-2 text-lg font-bold tracking-tight">
-        <img class="w-50" src="https://thetiny.site/storage/settings/only-logo-6ace061694a80.png" alt="">
+        <img class="w-32 sm:w-40 md:w-44 lg:w-48 h-auto" src="https://thetiny.site/storage/settings/only-logo-6ace061694a80.png" alt="">
       </a>
       <nav class="hidden items-center gap-8 text-sm font-medium text-slate-600 md:flex" aria-label="Main">
-        <a href="#home" class="hover:text-slate-900 underline top-1">Home</a>
+        <a href="#home" class="transition-colors hover:text-slate-900">Home</a>
         <a href="#about" class="hover:text-slate-900">About</a>
         <a href="#blog" class="hover:text-slate-900">Blog</a>
         <a href="#terms" class="hover:text-slate-900">Terms</a>
@@ -50,121 +53,181 @@
   <main>
     <!-- Hero -->
     <section id="start" class="bg-indigo-50/70">
-      <div class="mx-auto max-w-4xl px-4 pb-20 pt-16 text-center sm:px-6 sm:pb-28 sm:pt-24">
-        <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">Shorten your URL in seconds</h1>
-        <p class="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-slate-600">Create short, memorable links that you can share anywhere. Track every click with powerful analytics.</p>
+      
+      <div class="mx-auto max-w-5xl px-4 py-14 text-center sm:px-6 sm:py-20 lg:py-24">
+          <h3 class="mx-auto mb-5 inline-flex max-w-full items-center justify-center gap-2 rounded-full border px-4 py-2 text-xs font-semibold text-purple-700 sm:text-sm" style="background: rgba(91, 33, 243, 0.08); border: 1px solid rgba(91, 33, 243, 0.2)"><span class=""><i class="fa-solid fa-arrow-trend-up"></i></span>  Trusted by Thousands of users</h3>
+        <h1 class="text-3xl font-extrabold leading-tight tracking-tight sm:text-4xl md:text-5xl lg:text-6xl">Shorten your URL <br><span class="text-blue-700">in seconds</span></h1>
+        <p class="mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-600 sm:text-lg">Create short, memorable links that you can share anywhere. Track every click with powerful analytics.</p>
 
-        <form id="form" class="mx-auto mt-10 flex max-w-2xl flex-col gap-2 rounded-2xl bg-white p-2 shadow-lg ring-1 ring-slate-200 sm:flex-row">
+        <form id="form" class="mx-auto mt-8 flex w-full max-w-2xl flex-col gap-2 rounded-2xl bg-white p-2 shadow-lg ring-1 ring-slate-200 sm:mt-10 sm:flex-row">
           <label for="url" class="sr-only">Long URL</label>
           <input id="url" type="url" required placeholder="Paste your long link here" class="min-w-0 flex-1 rounded-xl px-4 py-3 text-base text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500">
-          <button type="submit" class="rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Shorten URL</button>
+          <button type="submit" class="w-full shrink-0 rounded-xl bg-indigo-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-indigo-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 sm:w-auto">Shorten URL</button>
         </form>
 
-        <div id="result" class="mx-auto mt-4 hidden max-w-2xl items-center justify-between gap-3 rounded-xl bg-white px-4 py-3 text-left ring-1 ring-indigo-200" aria-live="polite">
-          <span id="short" class="truncate font-semibold text-indigo-700"></span>
+        <div id="result" class="mx-auto mt-4 hidden w-full max-w-2xl flex-col items-stretch justify-between gap-3 rounded-xl bg-white px-4 py-3 text-left ring-1 ring-indigo-200 sm:flex-row sm:items-center" aria-live="polite">
+          <span id="short" class="min-w-0 break-all font-semibold text-indigo-700"></span>
           <button id="copy" type="button" class="shrink-0 rounded-lg bg-slate-900 px-4 py-1.5 text-sm font-semibold text-white hover:bg-slate-700">Copy</button>
         </div>
 
       
-    <!-- Home Section -->
-    <section id="home" class="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
-      <div class="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-        <div>
-          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl">Short links that do more than redirect</h2>
-          <p class="mt-4 max-w-lg text-lg leading-relaxed text-slate-600">Make a link once, then see how people use it.</p>
-          <dl class="mt-10 space-y-8">
-            <div class="flex gap-4">
-              <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-indigo-100 text-indigo-700">
-                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-              </div>
-              <div><dt class="font-semibold">Instant short links</dt><dd class="mt-1 text-slate-600">Paste a long URL and get a short one you can copy right away.</dd></div>
-            </div>
-            <div class="flex gap-4">
-              <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-indigo-100 text-indigo-700">
-                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 19V9m6 10V5m6 14v-7m4 7H2"/></svg>
-              </div>
-              <div><dt class="font-semibold">Click analytics</dt><dd class="mt-1 text-slate-600">Count every click and see which days your link gets the most visits.</dd></div>
-            </div>
-            <div class="flex gap-4">
-              <div class="grid h-11 w-11 shrink-0 place-items-center rounded-xl bg-indigo-100 text-indigo-700">
-                <svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg>
-              </div>
-              <div><dt class="font-semibold">Memorable by design</dt><dd class="mt-1 text-slate-600">Short enough to read aloud, type by hand, or fit in a post.</dd></div>
-            </div>
-          </dl>
-        </div>
+  </div>
 
-        <!-- Analytics preview -->
-        <div class="rounded-2xl bg-slate-900 p-6 text-white shadow-xl sm:p-8">
-          <div class="flex items-start justify-between">
-            <div>
-              <p class="text-sm text-slate-400">Clicks this week</p>
-              <p class="mt-1 text-4xl font-bold">1,284</p>
-            </div>
-            <span class="rounded-full bg-emerald-400/15 px-3 py-1 text-sm font-medium text-emerald-300">+18%</span>
-          </div>
-          <div class="mt-8 flex h-44 items-end gap-2 sm:gap-3" role="img" aria-label="Bar chart of clicks per day">
-            <div class="h-16 flex-1 rounded-t-md bg-indigo-400/50"></div>
-            <div class="h-24 flex-1 rounded-t-md bg-indigo-400/50"></div>
-            <div class="h-20 flex-1 rounded-t-md bg-indigo-400/50"></div>
-            <div class="h-32 flex-1 rounded-t-md bg-indigo-400/50"></div>
-            <div class="h-28 flex-1 rounded-t-md bg-indigo-400/50"></div>
-            <div class="h-44 flex-1 rounded-t-md bg-indigo-400"></div>
-            <div class="h-36 flex-1 rounded-t-md bg-indigo-400/50"></div>
-          </div>
-          <div class="mt-3 flex gap-2 text-center text-xs text-slate-400 sm:gap-3">
-            <span class="flex-1">Mon</span><span class="flex-1">Tue</span><span class="flex-1">Wed</span><span class="flex-1">Thu</span><span class="flex-1">Fri</span><span class="flex-1 font-semibold text-white">Sat</span><span class="flex-1">Sun</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="bg-slate-50">
-      <div class="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
-        <h2 class="max-w-xl text-3xl font-bold tracking-tight sm:text-4xl">Three steps from long link to tracked link</h2>
-        <ol class="mt-12 grid gap-10 md:grid-cols-3 md:gap-8">
-          <li class="border-t-2 border-indigo-600 pt-5">
-            <span class="text-sm font-bold text-indigo-600">Step 1</span>
-            <h3 class="mt-2 text-xl font-semibold">Paste your URL</h3>
-            <p class="mt-2 leading-relaxed text-slate-600">Drop any long link into the box at the top of the page.</p>
-          </li>
-          <li class="border-t-2 border-indigo-600 pt-5">
-            <span class="text-sm font-bold text-indigo-600">Step 2</span>
-            <h3 class="mt-2 text-xl font-semibold">Shorten it</h3>
-            <p class="mt-2 leading-relaxed text-slate-600">Select Shorten URL and your new tiny link appears in seconds.</p>
-          </li>
-          <li class="border-t-2 border-indigo-600 pt-5">
-            <span class="text-sm font-bold text-indigo-600">Step 3</span>
-            <h3 class="mt-2 text-xl font-semibold">Share and track</h3>
-            <p class="mt-2 leading-relaxed text-slate-600">Post it anywhere, then watch the clicks come in.</p>
-          </li>
-        </ol>
-      </div>
-    </section>
 
-    <!-- CTA -->
-    <section class="mx-auto max-w-6xl px-4 py-20 sm:px-6 sm:py-28">
-      <div class="rounded-3xl bg-indigo-600 px-6 py-14 text-center text-white sm:px-12">
-        <h2 class="mx-auto max-w-2xl text-3xl font-bold tracking-tight sm:text-4xl">Make your next link a tiny one</h2>
-        <p class="mx-auto mt-4 max-w-lg text-indigo-100">Create a free account to keep all your short links and their click counts in one place.</p>
-        <a href="#" class="mt-8 inline-block rounded-xl bg-white px-7 py-3 font-semibold text-indigo-700 hover:bg-indigo-50 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">Create free account</a>
-      </div>
-    </section>
-  </main>
+  <section class="mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20">
 
-  <!-- Footer -->
-  <footer class="border-t border-slate-200">
-    <div class="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-4 py-8 text-sm text-slate-500 sm:flex-row sm:px-6">
-      <p>&copy; 2026 thetiny. All rights reserved.</p>
-      <nav class="flex gap-6" aria-label="Footer">
-        <a href="#home" class="hover:text-slate-900">Features</a>
-        <a href="#about" class="hover:text-slate-900">How it works</a>
-        <a href="#" class="hover:text-slate-900">Privacy</a>
-        <a href="#" class="hover:text-slate-900">Terms</a>
-      </nav>
+    <div class="text-center space-y-5">
+      <p class="text-sm opacity-50 font-medium">PRICING</p>
+      <h2 class="text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl">Simple, transparent pricing.</h2>
+      <p class="text-base opacity-70 sm:text-lg">No hidden fees. Start free, scale when you're ready.</p>
     </div>
-  </footer>
+
+    <div class="grid grid-cols-1 items-stretch gap-6 pt-8 sm:grid-cols-2 lg:grid-cols-3 lg:gap-8 lg:pt-12">
+
+  <div class="card w-full rounded-2xl bg-base-100 shadow-sm">
+  <div class="card-body">
+    <div class="space-y-3">
+      <span class="text-sm font-bold opacity-60">FREE</span>
+      <h2 class="text-3xl font-extrabold">$0 <span class=" opacity-50 text-sm font-medium">/Forever</span> </h2>
+      <span>Great for individuals and casual use.</span>
+    </div>
+    <ul class="mt-2 flex flex-col gap-2 text-xs">
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>High-resolution image generation</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>Customizable style templates</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>Batch processing capabilities</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>AI-driven image enhancements</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>AI-driven image enhancements</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>AI-driven image enhancements</span>
+      </li>
+      
+    </ul>
+    <div class="mt-6">
+      <button class="btn btn-primary btn-block">Get Started Free</button>
+    </div>
+  </div>
+</div>
+
+  <div class="card w-full rounded-2xl bg-base-100 shadow-sm">
+  <div class="card-body rounded-2xl bg-blue-700">
+    <div class="space-y-3">
+      <span class=" text-white text-sm font-bold opacity-80">PRO</span>
+      <h2 class="text-3xl font-extrabold text-white">$9 <span class="text-white opacity-80 text-sm font-medium">/Per month</span> </h2>
+      <span class="text-white opacity-75">For creators, marketers, and power users.</span>
+    </div>
+    <ul class="mt-2 flex flex-col gap-2 text-xs">
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span class="text-white opacity-75">High-resolution image generation</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span class="text-white opacity-75">Customizable style templates</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span class="text-white opacity-75">Batch processing capabilities</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span class="text-white opacity-75">AI-driven image enhancements</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span class="text-white opacity-75">AI-driven image enhancements</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span class="text-white opacity-75">AI-driven image enhancements</span>
+      </li>
+      
+    </ul>
+    <div class="mt-6">
+      <button class="btn  bg-white btn-block">Start 14-Day trial</button>
+    </div>
+  </div>
+</div>
+  <div class="card w-full rounded-2xl bg-base-100 shadow-sm">
+  <div class="card-body">
+    <div class="space-y-3">
+      <span class="text-sm font-bold opacity-60">BUSINESS</span>
+      <h2 class="text-3xl font-extrabold">$29 <span class=" opacity-50 text-sm font-medium">/Per month</span> </h2>
+      <span>Great for individuals and casual use.</span>
+    </div>
+    <ul class="mt-2 flex flex-col gap-2 text-xs">
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>High-resolution image generation</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>Customizable style templates</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>Batch processing capabilities</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>AI-driven image enhancements</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>AI-driven image enhancements</span>
+      </li>
+      <li>
+        <svg xmlns="http://www.w3.org/2000/svg" class="size-4 me-2 inline-block text-success" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" /></svg>
+        <span>AI-driven image enhancements</span>
+      </li>
+      
+    </ul>
+    <div class="mt-6">
+      <button class="btn btn-primary btn-block">Subscribe</button>
+    </div>
+  </div>
+</div>
+
+
+  </section>
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <script>
     const $ = (id) => document.getElementById(id);
