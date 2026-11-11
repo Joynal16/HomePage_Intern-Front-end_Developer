@@ -1,7 +1,6 @@
   const menuBtn = document.getElementById('menu-btn');
   const menu = document.getElementById('menu');
 
-  console.log('hello boys');
   menuBtn.addEventListener('click', function () {
     menu.classList.toggle('hidden');
   });
