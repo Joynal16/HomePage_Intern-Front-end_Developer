@@ -9,6 +9,9 @@ A responsive landing page prototype for a URL-shortening service. It includes a 
 - Copy button for the generated demo URL.
 - Static sections for popular links, pricing, product features, and company information.
 
+## Project Live Link : https://thetiny-website-homepage.netlify.app/
+
+
 ## Run locally
 
 No build step or package installation is required. Open `index.html` in a browser, or serve the project from the workspace root with a local web server. For example, if Python is installed:
